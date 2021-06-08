@@ -14,13 +14,15 @@
 <body>
 	<div id="app">
 		<div class="container my-5">
-			<h1 class="mb-3 border text-center fa-2x">{{ title }}</h1>
-			<h1 class="mb-3 border text-center fa-2x">{{ title }}</h1>
-			<h1 class="mb-3 border text-center fa-2x">{{ title }}</h1>
-			<h1 class="mb-3 border text-center fa-2x">{{ title }}</h1>
-			<h1 class="mb-3 border text-center fa-2x">{{ title }}</h1>
-			<h1 class="mb-3 border text-center fa-2x">{{ title }}</h1>
-			<input type="text" class="form-control" v-model="title">
+			<h1 class="mb-3 border text-center fa-2x p-2" v-show="title.length">{{ title }}</h1>
+			<input type="text" class="form-control" v-model="title" autofocus>
+		</div>
+		<div class="container my-5 text-center">
+			<button class="btn btn-primary" v-on:click="onShowImg">보여줘</button>
+			<button class="btn btn-danger" v-on:click="onHideImg">가려줘</button>
+			<div class="text-center my-3" v-if="isShowImg">
+				<img src="../img/avatar_hat.jpg" alt="avatar">
+			</div>
 		</div>
 	</div>
 	<script type="module" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="../css/all.min.css">
+	<link rel="stylesheet" href="../css/bootstrap-icons.css">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/02.gallery.css">
+</head>
+<body>
+	<div id="app">
+		<div class="container">
+			<div class="title-wrapper jumbotron py-5 my-3">
+				<h1>{{ headerTitle }}</h1>
+				<hr>
+				<p>{{ headerDesc }}</p>
+			</div>
+			<div class="img-stage border rounded p-4 my-3">
+				<img :src="selectedImg" alt="img" class="w-100">
+			</div>
+			<ul class="thumb-wrapper d-flex flex-wrap justify-content-center">
+				<li class="thumb border p-2 rounded m-2" v-for="v in thumb" :key="v.id">
+					<img :src="v.src" :id=`thumb${v.id}` alt="thumb" class="w-100" @click="onThumbClick">
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="module" src="../js/02.gallery.js"></script>
+</body>
+</html>
